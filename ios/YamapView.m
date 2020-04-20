@@ -49,6 +49,13 @@ RCT_CUSTOM_VIEW_PROPERTY(mapStyle, NSString, RNYMView) {
 	}
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(mapEnabled, BOOL, RNYMView) {
+	if (json && view) {
+		[view.mapWindow.map setScrollGesturesEnabled:[json boolValue]];
+		[view.mapWindow.map setRotateGesturesEnabled:[json boolValue]];
+	}
+}
+
 // ref
 RCT_EXPORT_METHOD(fitAllMarkers:(nonnull NSNumber*) reactTag) {
     [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary<NSNumber *,UIView *> *viewRegistry) {

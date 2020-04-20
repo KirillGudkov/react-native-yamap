@@ -49,7 +49,7 @@ export interface RoutesFoundEvent<T extends (DrivingInfo | MasstransitInfo)> {
 
 interface Props extends ViewProps {
   userLocationIcon: ImageSource;
-
+  mapEnabled?: boolean
   // Should be a valid yandex-mapkit-style string
   // e.g '[{\"stylers\": {\"saturation\": -1}}]'
   // For more information see https://tech.yandex.ru/maps/mapkit/doc/3.x/concepts/style-docpage/

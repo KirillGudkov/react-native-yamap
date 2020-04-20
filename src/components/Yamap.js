@@ -19,6 +19,10 @@ const YaMapNative = requireNativeComponent('YamapView');
 export default class YaMap extends React.Component {
   map = React.createRef();
 
+  static defaultProps = {
+    mapEnabled: true
+  }
+
   static ALL_MASSTRANSIT_VEHICLES = [
     'bus',
     'trolleybus',
