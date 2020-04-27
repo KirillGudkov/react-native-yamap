@@ -137,12 +137,20 @@ public class YamapViewManager extends ViewGroupManager<YamapView> {
         }
     }
 
-        @ReactProp(name = "mapStyle")
-        public void setMapStyle(View view, String style) {
-            if (style != null) {
-                castToYaMapView(view).setMapStyle(style);
-            }
+    @ReactProp(name = "mapEnabled")
+    public void setMapEnabled(View view, Boolean mapEnabled) {
+        if (mapEnabled != null) {
+            castToYaMapView(view).setNoninteractive(!mapEnabled);
         }
+    }
+
+    @ReactProp(name = "mapStyle")
+    public void setMapStyle(View view, String style) {
+        if (style != null) {
+//                 castToYaMapView(view).setMapStyle(style);
+        }
+    }
+
 
     @Override
     public void addView(YamapView parent, View child, int index) {
